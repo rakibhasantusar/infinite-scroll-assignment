@@ -2,6 +2,8 @@ import { useEffect, useState } from 'react';
 import CardDetail from './components/CardDetail.jsx';
 import SearchForm from './components/SearchForm.jsx';
 
+// welcome to my API PUNK app .....
+
 const API_URL = "https://api.punkapi.com/v2/beers"; // url for beer api
 
 function App() {
