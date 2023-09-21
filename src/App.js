@@ -1,6 +1,7 @@
 import { useEffect, useState } from 'react';
 import CardDetail from './components/CardDetail.jsx';
 import SearchForm from './components/SearchForm.jsx';
+import Loader from './components/Loader.jsx';
 
 // welcome to my API PUNK app .....
 
@@ -9,6 +10,8 @@ const API_URL = `https://api.punkapi.com/v2/beers`; // url for beer api
 function App() {
   const [data, setData] = useState([])
   const [page, setPage] = useState(1)
+  const [message, SetErrorMessage] = useState('')
+  const [loading, setLoading] = useState(false)
 
   //function for data loading for per page
   const beerData = async () => {
@@ -38,13 +41,14 @@ function App() {
       if (
         totalHeight === scrollHeight
       ) {
+        setLoading(true)
         setPage(prev => prev + 1)
-        console.log('hit')
       }
 
     }
     catch (e) {
       console.error(e);
+      SetErrorMessage(e)
     }
 
   }
@@ -88,6 +92,15 @@ function App() {
             ></CardDetail>
           )
         }
+
+        {/* Loader here */}
+        <div className='d-flex justify-content-center'>
+          {loading &&
+            <Loader></Loader>
+          }
+        </div>
+        {/* error message for user */}
+        <p className='text-danger'>{message}</p>
       </div>
     </div>
   );
