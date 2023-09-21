@@ -6,12 +6,12 @@ import Modal from 'react-bootstrap/Modal';
 
 const ModalDetail = ({ handleShow, detail, show, handleClose }) => {
 
-    const { abv, contributed_by, id, name, description, ph, srm, food_pairing, ingredients, tagline, image_url } = detail
+    const { abv, contributed_by, name, description, ph, srm, food_pairing, ingredients, tagline, image_url } = detail
     const ingredient = ingredients.hops //hops data
 
     return (
         <>
-            <Button variant="outline-success" className='fw-bold m-2' onClick={() => handleShow(id)}>
+            <Button variant="outline-success" className='fw-bold m-2' onClick={() => handleShow()}>
                 click here for beer details
             </Button>
 

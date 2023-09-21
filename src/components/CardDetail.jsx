@@ -9,7 +9,7 @@ const CardDetail = ({ detail }) => {
     const handleClose = () => setShow(false);
     const handleShow = () => setShow(true);
 
-    const { image_url, name, tagline, first_brewed } = detail //data as props & destructure
+    const { image_url, name, tagline, first_brewed, id } = detail //data as props & destructure
 
 
     return (
@@ -22,7 +22,7 @@ const CardDetail = ({ detail }) => {
                     src={image_url} />
 
                 <Card.Body>
-                    <Card.Title>{name.slice(0, 25)}</Card.Title>
+                    <Card.Title >{name.slice(0, 20)} <span style={{ color: "rgb(200, 0, 0)", fontSize: '18px' }}>id: {id}</span></Card.Title>
                     <Card.Text >
                         <><i>"{tagline.slice(0, 29)}"</i></>
                         <><small
@@ -35,9 +35,9 @@ const CardDetail = ({ detail }) => {
                     {/* Component for Modal open  */}
                     <div className='d-flex justify-content-center'>
                         <ModalDetail
-                            handleShow={handleShow}
                             detail={detail}
                             show={show}
+                            handleShow={handleShow}
                             handleClose={handleClose}
                         ></ModalDetail>
                     </div>

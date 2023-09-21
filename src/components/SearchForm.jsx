@@ -1,8 +1,8 @@
 import 'bootstrap/dist/css/bootstrap.min.css'; // Import Bootstrap CSS
-import { Form, FormControl, Button } from 'react-bootstrap';
+import { Form, FormControl } from 'react-bootstrap';
 
 
-const SearchForm = ({ handleSearchChange, handleSubmit }) => {
+const SearchForm = ({ handleSearchChange }) => {
 
     return (
         <div className='d-flex justify-content-center'>
@@ -23,23 +23,6 @@ const SearchForm = ({ handleSearchChange, handleSubmit }) => {
                         onChange={handleSearchChange}
                     />
                 </Form>
-                <Button
-                    onClick={handleSubmit}
-                    type="submit"
-                    className='mx-auto fw-semibold'
-                    style={{
-                        width: "100px",
-                        height: "100px",
-                        padding: "13px 18px",
-                        borderRadius: "60px",
-                        borderWidth: '2px',
-                        fontSize: "15px",
-                        textAlign: "center"
-                    }}
-                    variant="outline-success"
-                >
-                    Pick Random one
-                </Button>
             </div>
         </div>
     );
